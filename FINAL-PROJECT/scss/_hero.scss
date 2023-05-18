@@ -1,0 +1,116 @@
+@import "./utils";
+@import "./media-queries";
+
+.hero {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 0 2rem;
+    margin: 100px auto 100px auto;
+    max-width: 1100px;
+
+    @include hero-tablet {
+        grid-template-columns: 1fr;
+        row-gap: 100px;
+
+        @include flexCenter;
+        flex-direction: column;
+    }
+
+    @include mobile-media {
+        margin-top: 30px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .hero-left {
+
+        h1 {
+            font-size: 6rem;
+            max-width: 700px;
+            background-image: linear-gradient(5deg, $pastel-green, $minty-color, #fff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            @include hero-tablet {
+                font-size: 4rem;
+                max-width: 500px;
+            }
+
+            @include mobile-media {
+                font-size: 3rem;
+                text-align: center;
+                overflow-wrap: anywhere;
+            }
+        }
+
+        button {
+            @include buttons-style;
+            margin: 3rem auto;
+
+            @include buttons-tablet {
+                display: block;
+            }
+        }
+
+        ul {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+
+            @include mobile-media {
+                font-size: 1.2rem;
+            }
+
+            li {
+                margin-top: 1.5rem;
+            }
+        }
+
+        #candidati-btn {
+            background: linear-gradient(50deg, $red-color, $pastel-red, $pastel-orange);
+            box-shadow: 0px 0px 10px 1px #fff;
+            border: 1px solid $pastel-yellow;
+            color: #fff;
+
+            /*HOVER*/
+            @include hover-red;
+        }
+
+        #consulenza-btn {
+            background: linear-gradient(90deg, $yellow-color , $pastel-yellow );
+            margin-left: 2rem;
+            /*HOVER*/
+            @include hover-yellow;
+
+
+            @include buttons-tablet {
+                margin-left: auto;
+            }
+        }
+    }
+
+    .hero-right {
+        @include flexCenter;
+        width: 100%;
+
+        .img-container {
+            width: 100%;
+            max-width: 380px;
+            border-radius: 50%;
+            background: linear-gradient(-15deg, $red-color, $pastel-orange, $pastel-yellow, $minty-color);
+            box-shadow: 0px 0px 10px 1px #fff;
+            border: 1px solid $pastel-yellow;
+            
+
+            .hero-image {
+                width: 100%;
+                object-fit: contain;
+                /*Animations*/
+                @include fluctuate-animation;
+            }
+        }
+
+
+    }
+}

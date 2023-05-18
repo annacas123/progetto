@@ -1,0 +1,145 @@
+@import "./utils";
+@import "./media-queries";
+
+.reviews-section {
+    background: $dark-color url("./images/trapezium-red.png") no-repeat center/100% 100% fixed;
+    padding: 120px 0 200px 0;
+    @include flexCenter;
+    flex-direction: column;
+
+    /*heading*/
+    .heading {
+        @include flexCenter;
+        padding-bottom: 3.5rem;
+        width: 100%;
+
+        @include hero-tablet {
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .heading-left {
+            flex: 3;
+            @include flexCenter;
+            flex-direction: column;
+            align-items: end;
+
+            @include hero-tablet {
+                padding-bottom: 2rem;
+                align-items: center;
+            }
+
+            h1 {
+                font-size: 3rem;
+                width: 80%;
+
+                @include mobile-media {
+                    font-size: 2rem;
+                    width: 100%;
+                }
+            }
+
+            h4{
+                width: 80%;
+            }
+        }
+
+        .heading-right {
+            flex: 3;
+            @include flexCenter;
+
+            .btn {
+                @include buttons-style;
+                background-color: $minty-color;
+                color: $dark-color;
+                border: 1px solid $dark-color;
+
+                /*HOVER*/
+                @include hover-darkblue;
+            }
+        }
+
+    }
+
+    /*Comments-container*/
+    .scroll {
+        width: 100%;
+        max-width: 1200px;
+        overflow: auto;
+        margin: auto;
+
+        .comments-container {
+            min-width: 2000px;
+            @include flexCenter;
+            justify-content: start;
+            padding: 1rem;
+
+            .item {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+
+                padding: 2rem;
+                margin-right: 3rem;
+                width: 600px;
+                border-radius: 10px;
+                height: 400px;
+                background: #fff;
+                color: #000;
+                position: relative;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+
+                @include hero-tablet {
+                    width: 350px;
+                }
+
+                i {
+                    background-image: linear-gradient(15deg, $pastel-orange, $yellow-color);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-size: 1.35rem;
+                }
+
+                p {
+                    font-size: 1.3rem;
+                }
+
+                a {
+                    font-size: 1.1rem;
+                }
+
+                span {
+                    display: flex;
+                    align-items: center;
+
+                    .profile-pic {
+                        width: 60px;
+                        height: 60px;
+                        background: $dark-color;
+                        border-radius: 50%;
+                        display: inline-block;
+                        margin-right: 1.1rem;
+                        border: 1px solid $red-color;
+                        box-shadow: 0px 0px 5px 1px $pastel-red;
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .user-name {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+
+
+}

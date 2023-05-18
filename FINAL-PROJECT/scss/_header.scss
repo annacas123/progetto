@@ -1,0 +1,33 @@
+@import "./utils";
+@import "./media-queries";
+
+
+.header {
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+
+    @include buttons-tablet {
+        @include flexCenter;
+    }
+
+    &-logo-image {
+        height: 4rem;
+    }
+
+    #header-btn {
+        @include buttons-style;
+        border: 1px solid $minty-color;
+        background: none;
+        color: $minty-color;
+        /*HOVER*/
+        @include hover-minty;
+
+        @include buttons-tablet {
+            display: none;
+        }
+    }
+}

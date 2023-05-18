@@ -1,0 +1,180 @@
+@import "./utils";
+@import "./media-queries";
+
+.roadmap-section {
+    background: $dark-color url("./images/thumbnail-roadmap.svg") no-repeat center/cover;
+    padding: 10rem 0rem 0rem 0rem;
+    margin: auto;
+    min-height: 900px;
+
+    /*heading*/
+    .heading {
+        max-width: 1400px;
+        margin: auto;
+        /*Animation*/
+        @include fluctuate-animation;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        column-gap: 2rem;
+
+        @include hero-tablet {
+            flex-direction: column-reverse;
+        }
+
+        &-left {
+            flex: 1;
+            @include flexCenter;
+            flex-direction: column;
+            max-width: 700px;
+            padding: 2rem;
+            padding-left: 4rem;
+            font-size: 1.2rem;
+            color: #fff;
+
+            @include hero-tablet {
+                padding-bottom: 6rem;
+                padding-left: 2rem;
+            }
+
+            h1 {
+                font-size: 4rem;
+                text-align: center;
+                color: #fff;
+
+                @include mobile-media {
+                    font-size: 2.5rem;
+                }
+            }
+
+            p,
+            li {
+                margin-top: 3rem;
+                width: 100%;
+            }
+
+            ul {
+                padding-left: 0;
+
+                li {
+
+                    list-style: none;
+                    
+
+                    i {
+                        margin-right: 10px;
+                        transform: translateY(1rem);
+                        background-image: linear-gradient(15deg, $pastel-orange 62%, $yellow-color 100%);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+
+                    span {
+                        color: $dark-color;
+                        background-image: linear-gradient(15deg, $pastel-orange , $yellow-color );
+                        font-weight: bold;
+                        display: inline-block;
+                        font-size: 1.5rem;
+                        padding: 0.5rem 1em;
+                        line-height: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        &-right {
+            @include flexCenter;
+            flex: 1;
+            max-width: 700px;
+
+            img {
+                width: 100%;
+                max-width: 500px;
+                border-top-left-radius: 50%;
+                border-bottom-right-radius: 50%;
+                border-bottom-left-radius: 100%;
+                border-top-right-radius: 100%;
+                border: 1px solid $pastel-yellow;
+                box-shadow: 0px 0px 10px 1px #fff;
+            }
+        }
+    }
+
+    /*cards*/
+    .roadmap-cards-section {
+        height: 2800px;
+        padding-bottom: 4rem;
+        padding-top: 4rem;
+
+        .cards-container {
+            height: 100%;
+            width: 100%;
+
+            .card-item {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                max-width: 500px;
+                width: 100%;
+
+                background: linear-gradient(0deg, lightgrey, #fff 40%) fixed;
+                color: $dark-color;
+                margin: auto auto 4rem auto;
+                padding: 3rem;
+                @include mobile-media{
+                    padding: 3rem 1rem;
+                }
+                position: sticky;
+                box-shadow: 0px -1px 10px 0px #000006;
+                border-radius: 10px;
+
+                &:nth-child(1) {
+                    top: 4rem;
+                }
+
+                &:nth-child(2) {
+                    top: 15rem;
+                }
+
+                &:nth-child(3) {
+                    top: 26rem;
+                }
+
+                &:nth-child(4) {
+                    top: 37rem;
+                }
+
+                .title {
+                    h1 {
+                        text-align: center;
+                        font-size: 2.3rem;
+                        @include mobile-media{
+                            font-size: 2rem;
+                        }
+                    }
+
+                    .title-number {
+                        color: $red-color;
+                        font-size: 2.5rem;
+                        @include mobile-media{
+                            font-size: 2rem;
+                        }
+                    }
+                }
+
+                &-paragraph {
+                    h2 {
+                        font-size: 1.2rem;
+                        padding: 1.2rem 0;
+                    }
+                }
+
+            }
+        }
+
+
+    }
+}

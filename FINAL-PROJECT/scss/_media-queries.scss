@@ -1,0 +1,17 @@
+@mixin hero-tablet {
+    @media screen and (max-width: 990px) {
+        @content
+    }
+};
+
+@mixin buttons-tablet {
+    @media screen and (max-width: 768px){
+        @content;
+    }
+};
+
+@mixin mobile-media{
+    @media screen and (max-width: 450px){
+        @content;
+    }
+}

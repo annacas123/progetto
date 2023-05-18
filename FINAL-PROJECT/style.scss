@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@import "./scss/utils";
+@import "./scss/header";
+@import "./scss/hero";
+@import "./scss/signup";
+@import "./scss/pro";
+@import "./scss/reviews";
+@import "./scss/roadmap";
+@import "./scss/payment";
+@import "./scss/signup";
+@import "./scss/mercato";
+@import "./scss/faq";
+@import "./scss/footer";
+@import "./scss/media-queries";
+
+html {
+    font-size: 14px;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: $dark-color;
+    color: #fff;
+
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+}
+
+ul {
+    padding-left: 2em;
+}

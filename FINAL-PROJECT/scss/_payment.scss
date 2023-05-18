@@ -1,0 +1,104 @@
+@import "./utils";
+@import "./media-queries";
+
+.payment-section {
+    padding: 2rem 0;
+    margin-top: 5rem;
+    @include mobile-media{
+        padding: 2rem 0.5rem;
+    }
+
+    .head {
+        padding: 0 1rem;
+        h1,
+        h3 {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: $yellow-color;
+        }
+    }
+
+    .contain {
+        margin-top: 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4rem;
+        justify-content: space-around;
+        align-content: stretch;
+        align-items: stretch;
+
+        width: 100%;
+        color: #000;
+
+        @include hero-tablet {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &-left,
+        &-right {
+            max-width: 500px;
+            flex: 1;
+
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            padding: 4rem;
+
+            @include mobile-media {
+                padding: 4rem 1rem;
+            }
+
+            box-shadow: 0px -1px 10px 0px #000006;
+            border-radius: 10px;
+
+            .title {
+                @include mobile-media {
+                    text-align: center;
+                }
+
+                h1 {
+                    font-size: 2.6rem;
+                    text-transform: uppercase;
+                }
+
+                h2 {
+                    color: $red-color;
+                }
+            }
+
+            .paragraph {
+                .number {
+                    font-size: 2.6rem;
+                }
+
+                p {
+                    @include mobile-media {
+                        text-align: center;
+                    }
+                }
+
+                button {
+                    @include buttons-style;
+                    margin: 2rem auto 0 auto;
+                    background: linear-gradient(5deg, #68db82, #8efbc8, #fff);
+
+                    display: block;
+
+                    /*HOVER*/
+                    @include hover-darkblue;
+                }
+
+                ul {
+                    font-size: 1.2rem;
+                }
+            }
+
+        }
+    }
+}

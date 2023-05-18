@@ -1,0 +1,146 @@
+@import "./media-queries";
+
+/*Main colors*/
+$dark-color: #010033;
+$minty-color: #8efbc8;
+$yellow-color: #fff200;
+$red-color: #ed1c24;
+
+/*Secondary-colors*/
+$pastel-red: #cf4042;
+$pastel-orange: #f78a52;
+$pastel-yellow: #f7e763;
+$pastel-green: #68db82;
+
+/*Buttons*/
+@mixin buttons-style {
+    border: none;
+    font-size: 1.1rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    position: relative;
+
+    @include buttons-tablet {
+        width: 100%;
+        position: relative;
+        flex: 1;
+        max-width: 300px;
+        min-width: 200px;
+    }
+
+
+    a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+        padding: 1.2rem 3.5em;
+
+        @include buttons-tablet {
+            padding: 1.2rem 1.2rem;
+            width: 100%;
+            max-width: 300px;
+            min-width: 200px;
+        }
+    }
+
+
+}
+
+/*flexCenter*/
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*PRO-SECTION*/
+/*Icons background*/
+@mixin icons-background {
+    position: relative;
+
+    &::before {
+        font-family: 'Fontawesome';
+        color: rgba(211, 211, 211, 0.392);
+        position: absolute;
+        font-size: 150px;
+    }
+
+    * {
+        z-index: 1;
+    }
+}
+
+@mixin pro-items-backgrounds {
+    .one::before {
+        content: "\e4bc";
+    }
+
+    .two::before {
+        content: "\f0b1";
+    }
+
+    .three::before {
+        content: "\f590";
+
+    }
+
+    .four::before {
+        content: "\f70e";
+    }
+}
+
+/*HOVERS*/
+@mixin hover-minty {
+    transition: background-color, border-color, color, ease-out, 1s ;
+
+    &:hover{
+        background-color: $minty-color;
+        border-color: transparent;
+        color:$dark-color;
+    }
+}
+
+@mixin hover-yellow {
+    transition: background, border, color, ease, 1s;
+
+    &:hover{
+        background: $dark-color;
+        border:1px solid  $yellow-color;
+        color:$yellow-color;
+    }
+}
+
+@mixin hover-darkblue {
+    transition: background, border, color, ease-out, 1s;
+
+    &:hover{
+        background: $dark-color;
+        color: $minty-color;
+        border:1px solid $minty-color;
+    }
+}
+
+@mixin hover-red {
+    transition: transform, ease, 1s;
+
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+/*ANIMATIONS*/
+@mixin fluctuate-animation {
+    animation: fluctuate 1s alternate-reverse infinite;
+
+    @keyframes fluctuate {
+        0%{
+            transform:translateY(-10px);
+        }
+
+        100%{
+            transform:translateY(10px);
+        }
+    }
+}

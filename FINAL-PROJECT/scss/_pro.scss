@@ -1,0 +1,76 @@
+@import "./utils";
+@import "./media-queries";
+
+.pro-section {
+    padding: 2rem 2rem 5rem 2rem;
+    color: #fff;
+    min-height: 900px;
+    @include flexCenter;
+    flex-direction: column;
+
+    background: $minty-color url("./images/pro-background.png") repeat center/cover;
+
+    h1 {
+        text-align: center;
+        font-size: 3.8rem;
+        color: #fff;
+
+        @include mobile-media{
+            font-size: 2.4rem;
+        }
+    }
+
+    .pro-container {
+        @include flexCenter;
+        flex-wrap: wrap;
+        @include pro-items-backgrounds;
+        /*Animation*/
+        @include fluctuate-animation;
+
+
+        .pro-item {
+            box-shadow: -20px 20px 6px 4px #000000a6;
+            background: $dark-color;
+            transform: skew(10deg, -5deg);
+
+            border: 2px solid $pastel-yellow;
+            border-radius: 10px;
+
+            @include flexCenter;
+            flex-direction: column;
+
+            margin-top: 4rem;
+            padding: 1rem 3rem;
+            max-width: 500px;
+            min-height: 200px;
+
+            @include icons-background;
+            @include mobile-media{
+                padding: 2rem 1rem;
+            }
+
+
+            h2 {
+                text-transform: uppercase;
+                text-align:center;
+            }
+
+            p{
+                font-size: 1.1rem;
+            }
+        }
+
+        .pro-item.two,
+        .pro-item.four {
+            margin-left: 4rem;
+            transform: skew(-10deg, 5deg);
+
+            @include hero-tablet {
+                margin-left: 0;
+            }
+        }
+
+    }
+
+
+}
